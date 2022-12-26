@@ -12,3 +12,9 @@ after_success:
   - docker build -t adi/multi-nginx ./nginx
   - docker build -t adi/multi-server ./server
   - docker build -t adi/multi-worker ./worker
+
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
+  - docker push adi/multi-client
+  - docker push adi/multi-nginx
+  - docker push adi/multi-server
+  - docker push adi/multi-worker
