@@ -20,7 +20,7 @@ after_success:
   - docker push "$DOCKER_ID"/multi-worker
 
 deploy:
-  provider: elsaticbeanstalk
+  provider: elasticbeanstalk
   region: 'eu-west-1'
   app: 'multi-docker'
   env: 'MultiDocker-env'
